@@ -3,9 +3,9 @@ kind: Ingress
 metadata:
   name: msadd-ingress   
 spec:
-  ingressClassName: azure-application-gateway
+  ingressClassName: nginx
   rules:
-  - host: create.mahender.site
+  - host: create.inframellow.com
     http:
       paths:
       - pathType: Prefix

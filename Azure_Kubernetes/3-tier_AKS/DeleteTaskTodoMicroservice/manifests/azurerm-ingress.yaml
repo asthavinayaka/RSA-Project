@@ -5,9 +5,9 @@ metadata:
   # annotations:
   #   kubernetes.io/ingress.class: addon-http-application-routing
 spec:
-  ingressClassName: azure-application-gateway
+  ingressClassName: nginx
   rules:
-  - host: delete.mahender.site
+  - host: delete.inframellow.com
     http:
       paths:
       - pathType: Prefix

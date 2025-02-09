@@ -5,9 +5,9 @@ metadata:
   labels:
     name: ms-ingress
 spec:
-  ingressClassName: azure-application-gateway
+  ingressClassName: nginx
   rules:
-  - host: msfrontend.mahender.site
+  - host: msfrontend.inframellow.com
     http:
       paths:
       - pathType: Prefix
