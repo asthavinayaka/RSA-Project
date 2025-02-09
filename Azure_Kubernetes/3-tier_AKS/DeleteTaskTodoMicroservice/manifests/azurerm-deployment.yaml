@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: delete-task
+spec:
+  # replicas: 3
+  selector:
+    matchLabels:
+      app: delete-task
+  template:
+    metadata:
+      labels:
+        app: delete-task
+    spec:
+      containers:
+      - name: delete-task
+        env:
+          - name: CONNECTION_STRING
+            value: "Driver={ODBC Driver 17 for SQL Server};Server=tcp:mssql89.database.windows.net,1433;Database=sqldb;Uid=sqladmin;Pwd=P@ssw0rd1234;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+        image: imdevacr89.azurecr.io/backend-deletetask:v1
+        ports:
+        - containerPort: 8000

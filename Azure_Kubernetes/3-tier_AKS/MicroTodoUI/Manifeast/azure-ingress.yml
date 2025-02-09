@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ms-ingress
+  labels:
+    name: ms-ingress
+spec:
+  ingressClassName: azure-application-gateway
+  rules:
+  - host: msfrontend.mahender.site
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: ms-service
+            port: 
+              number: 80
