@@ -1,0 +1,17 @@
+# Deployment
+deploymentName: todoui
+connectionString: "Driver={ODBC Driver 17 for SQL Server};Server=tcp:dev-dockndeploy-server.database.windows.net,1433;Database=dev-dockndeploy-database;Uid=dockndeploy;Pwd=DockernDeploy@123!;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"
+registryServer: "imdevacr89.azurecr.io"
+imageName: "frontend"
+imageTag: "v1"
+replicaCount: 3
+containerPort: 80
+
+#Ingress
+ingressName: "todoui"
+portNumber: 80
+urlName: "microui"
+
+#Service
+servicePort: 80
+serviceName: todoui

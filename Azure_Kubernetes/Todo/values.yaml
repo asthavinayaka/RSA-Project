@@ -1,0 +1,16 @@
+# Deployment
+deploymentName: 
+connectionString:
+registryServer:
+imageName:
+imageTag:
+containerPort:
+
+#Ingress
+ingressName:
+portNumber:
+urlName:
+
+#Service
+servicePort:
+serviceName:

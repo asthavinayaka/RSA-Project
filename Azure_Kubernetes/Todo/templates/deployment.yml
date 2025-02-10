@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deploymentName }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deploymentName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deploymentName }}
+    spec:
+      containers:
+      - name: {{ .Values.deploymentName }}
+        env:
+          - name: CONNECTION_STRING
+            value: "{{.Values.connectionString}}"
+        image: "{{ .Values.registryServer }}/{{ .Values.imageName }}:{{ .Values.imageTag }}"
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+
